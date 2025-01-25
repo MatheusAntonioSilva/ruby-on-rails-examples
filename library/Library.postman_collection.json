@@ -1,0 +1,380 @@
+{
+	"info": {
+		"_postman_id": "d8558afe-c222-4b37-9dd4-3eadbc929394",
+		"name": "Library",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Rota Principal",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://libraryapp-rails.herokuapp.com",
+					"protocol": "https",
+					"host": [
+						"libraryapp-rails",
+						"herokuapp",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastro de Contas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": {\n        \"first_name\": \"NewTest\",\n        \"last_name\": \"Tes\",\n        \"email\": \"test@email.com\",\n        \"password\": \"mypassword\",\n        \"password_confirmation\": \"mypassword\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://libraryapp-rails.herokuapp.com/v0/users",
+					"protocol": "https",
+					"host": [
+						"libraryapp-rails",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v0",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastro de Bibliotecários",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": {\n        \"first_name\": \"NewTest\",\n        \"last_name\": \"teste\",\n        \"email\": \"tesssstenew@email.com\",\n        \"password\": \"mypassword\",\n        \"password_confirmation\": \"mypassword\",\n        \"kind\": \"librarian\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://libraryapp-rails.herokuapp.com/v0/users",
+					"protocol": "https",
+					"host": [
+						"libraryapp-rails",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v0",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": {\n        \"email\": \"tesssstenew@email.com\",\n        \"password\": \"mypassword\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://libraryapp-rails.herokuapp.com/v0/users/sign_in",
+					"protocol": "https",
+					"host": [
+						"libraryapp-rails",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v0",
+						"users",
+						"sign_in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://libraryapp-rails.herokuapp.com/v0/users/sign_out",
+					"protocol": "https",
+					"host": [
+						"libraryapp-rails",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v0",
+						"users",
+						"sign_out"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detalhe de Livro",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://libraryapp-rails.herokuapp.com/v0/books/2",
+					"protocol": "https",
+					"host": [
+						"libraryapp-rails",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v0",
+						"books",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastro de Livros",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/matheus/Documentos/Curriculum-MatheusAntonioSilva.pdf"
+						},
+						{
+							"key": "title",
+							"value": "test vamos la",
+							"contentType": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Test vamos",
+							"type": "text"
+						},
+						{
+							"key": "author[name]",
+							"value": "Test Autor",
+							"contentType": "application/json",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://libraryapp-rails.herokuapp.com/v0/books",
+					"protocol": "https",
+					"host": [
+						"libraryapp-rails",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v0",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualização de Livro",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/matheus/Documentos/Currículo - Matheus Antonio Silva - Inglês.pdf"
+						},
+						{
+							"key": "title",
+							"value": "testestssss ",
+							"contentType": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Test New",
+							"type": "text"
+						},
+						{
+							"key": "author[name]",
+							"value": "Matheus",
+							"contentType": "application/json",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://libraryapp-rails.herokuapp.com/v0/books/2",
+					"protocol": "https",
+					"host": [
+						"libraryapp-rails",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v0",
+						"books",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir Livro",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://libraryapp-rails.herokuapp.com/v0/books/2",
+					"protocol": "https",
+					"host": [
+						"libraryapp-rails",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v0",
+						"books",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listagem de Livros",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://libraryapp-rails.herokuapp.com/v0/books",
+					"protocol": "https",
+					"host": [
+						"libraryapp-rails",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v0",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Favoritar livro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"book_id\": \"4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://libraryapp-rails.herokuapp.com/v0/favorites/books",
+					"protocol": "https",
+					"host": [
+						"libraryapp-rails",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v0",
+						"favorites",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover Livro dos Favoritos",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://libraryapp-rails.herokuapp.com/v0/favorites/books/4",
+					"protocol": "https",
+					"host": [
+						"libraryapp-rails",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v0",
+						"favorites",
+						"books",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

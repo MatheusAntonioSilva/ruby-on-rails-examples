@@ -1,0 +1,11 @@
+version: '3'
+services:
+  library-integration-tests:
+    container_name: library-integration-tests
+    tty: true
+    stdin_open: true
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle install && bundle exec rspec"
+    volumes:
+      - .:/var/www/app
+      - /home/$USER/.library-integration-tests.bash_history:/root/.bash_history
